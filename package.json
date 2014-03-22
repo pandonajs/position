@@ -1,0 +1,28 @@
+{
+    "name": "position",
+    "version": "1.0.0",
+    "homepage": "https://pandonajs.github.com/position/",
+    "description": "定位工具组件",
+    "family": "pandora",
+    "author": "afc163 <xingmin.zhu@alipay.com>",
+    "maintainer": [
+        "lynzz <zhizhonglin@cyou-inc.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pandonajs/position.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pandonajs/position/issues"
+    },
+    "spm": {
+        "source": "src",
+        "output": ["position.js"],
+        "alias": {
+            "$": "$"
+        }
+    },
+    "tests": [
+        "position"
+    ]
+}

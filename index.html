@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <title>pandora/position - Position</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="nico 0.4.7" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link type="image/x-icon" href="./static/css/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="./static/css/normalize.css" />
+    <link rel="stylesheet" href="./static/css/site.css" />
+    <link rel="stylesheet" href="./static/css/solarized.css" />
+<style>
+/* alipay iconfont */
+@font-face {
+  font-family: "rei";
+  src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130423"); /* IE9 */
+  src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20130423#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("https://i.alipayobjects.com/common/fonts/rei.woff?20130423") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+  url("https://i.alipayobjects.com/common/fonts/rei.ttf?20130423")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("https://i.alipayobjects.com/common/fonts/rei.svg?20130423#rei") format("svg"); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"rei";
+  font-style: normal;
+  font-weight: normal;
+  cursor: default;
+  -webkit-font-smoothing: antialiased;
+}
+</style>
+
+<script src="http://assets.spmjs.org/??
+seajs/seajs/2.2.0/sea.js,
+seajs/seajs-combo/1.0.1/seajs-combo.js,
+seajs/seajs-style/1.0.2/seajs-style.js,
+seajs/seajs-health/0.1.0/seajs-health.js,
+jquery/jquery/1.7.2/jquery.js"></script>
+<script>
+  (function() {
+
+  var query = location.search.substring(1).split('&');
+  var srcdir = 'src';
+
+  if (contain(query, 'dist')) {
+    srcdir = 'dist';
+    
+      seajs.use("./dist/position.js");
+  } else if (contain(query, 'cov')) {
+    srcdir = 'src-cov';
+  }
+
+  seajs.config({
+    alias: {
+      "$": 'jquery/jquery/1.7.2/jquery',
+      "$-debug": 'jquery/jquery/1.7.2/jquery-debug',
+      "jquery": 'jquery/jquery/1.7.2/jquery',
+      "jquery-debug": 'jquery/jquery/1.7.2/jquery-debug',
+      expect: "gallery/expect/0.2.0/expect",
+      puerh: "popomore/puerh/0.1.0/puerh",
+      handlebars: "gallery/handlebars/1.0.2/handlebars",
+      sinon: "gallery/sinon/1.6.0/sinon"
+    },
+    map: [function(uri) {
+      // resolve id
+      var m = uri.match(/pandora\/position\/1.0.0\/(.*)/);
+      if (m) {
+        return resolve(m[1]);
+      }
+      return uri;
+    }, function(uri) {
+      var m = uri.match(/([A-Za-z\-]+)\/[A-Za-z\-]+\/[\.0-9]+\/.+/);
+      if (m && /^alipay$/.test(m[1])) {
+        return 'http://yuan.alipay.im/assets/' + m[0];
+      }
+      return uri;
+    }],
+    comboExcludes: {test: function(uri) {
+      return uri.indexOf('http://assets.spmjs.org') === -1;
+    }}
+  });
+
+  function resolve(file) {
+    if (contain(query, 'debug')) {
+      if (file.indexOf('-debug') === -1) {
+        file = file.replace(/\.(\w+)$/, '-debug.$1');
+      }
+    }
+    return seajs.resolve("./" + srcdir + "/" + file + '#');
+  }
+
+  function contain(arr, value) {
+    for (var i in arr) {
+      if (arr[i] === value) {
+        return true;
+      }
+    }
+    return false;
+  }
+      seajs.config({ alias: {}});
+    seajs.use([]);
+
+    seajs.config({alias: {
+      "$-debug": 'jquery/jquery/1.7.2/jquery-debug'
+        ,"position": resolve("position.js")
+    }});
+
+    // 加载依赖的 css 文件
+    var cssArray = [];
+    for (var i=0; i<cssArray.length; i++) {
+      if (cssArray[i].indexOf('.css') < 0) {
+        cssArray.splice(i, 1);
+      }
+    }
+    seajs.use(cssArray);
+  })();
+</script>
+    <script src="./static/js/site.js"></script>
+    <!--[if lt IE 9]>
+    <script src="./static/js/html5shiv.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body class="">
+    <div id="body-wrapper">
+      <aside id="sidebar-wrapper">
+      <h1>
+          <a href="_site">Position</a><sup class="package-root"><a href="/">pandora</a></sup>
+      </h1>
+        <p class="version">当前版本：<a href="">1.0.0</a></p>
+        <p class="description">定位工具组件</p>
+        <p class="keywords" style="display: none;"></p>
+        <a class="source" href="https://github.com/pandonajs/position" target="_blank">View the Project</a>
+        <ul id="navigation" role="navigation">
+          <li><a href="_site">文档</a></li>
+          <li><a href="examples/">演示</a></li>
+          <li><a class="test-link" href="tests/runner.html" target="_blank">用例</a></li>
+          <li><a class="issue-link" href="https://github.com/pandonajs/position/issues" target="_blank">讨论</a></li>
+        </ul>
+        
+<ul id="module-output">
+  <li class="module-multiable" title="本组件共有1个子模块">文件</li>
+    <li><a data-file="position.js" target="_blank" href="http://assets.spmjs.org/pandora/position/1.0.0/position.js">■</a></li>
+</ul>
+<div id="output-card">
+    <h3>pandora/position/1.0.0/<a target="_blank" id="output-file"></a></h3>
+    <p>这是本模块的输出文件，请复制以上 ID 进行使用。</p>
+</div>
+
+      </aside>
+      <div id="content-wrapper">
+        <div id="content">
+<article class="hentry">
+  <h1 class="entry-title">Position</h1>
+  <div class="entry-content">
+    <h2 id="模块依赖">模块依赖<a href="#模块依赖" class="anchor">¶</a></h2><ul>
+<li>seajs</li>
+<li>jquery</li>
+</ul>
+<h2 id="使用说明">使用说明<a href="#使用说明" class="anchor">¶</a></h2><h3 id="pin-position-pin-pinobject-baseobject">pin <code>Position.pin(pinObject, [baseObject])</code><a href="#pin-position-pin-pinobject-baseobject" class="anchor">¶</a></h3><p>基础定位方法，接收两个参数。</p>
+<ol>
+<li><p><code>pinObject</code>：目标定位元素，必选。</p>
+<p>类型为字面量对象 <code>{ element: a, x: 10, y: 10 }</code>，element 为需定位元素， x 和 y 表示定位元素的定位点。</p>
+<p>也可简单写成 DOM 节点 a，相当于 <code>{ element: a, x: 0, y: 0 }</code>，表示定位点是节点左上角。</p>
+</li>
+<li><p><code>baseObject</code>：基准定位元素，可选。</p>
+<p>类型为字面量对象 <code>{ element: b, x: 10, y: 10 }</code>，element 为基准定位元素，x 和 y 表示基准定位元素的定位点。</p>
+<p>也可简单写成 DOM 节点 a，相当于 <code>{ element: a, x: 0, y: 0 }</code>，表示定位点是节点左上角。</p>
+<p>当 element 缺省时，表示 pinObject 相对屏幕可见区域的左上角定位。比如可以写成</p>
+<pre>Position.pin(a, { x: 10, y: 10 });    // 这样后一个参数可简单理解为偏移量
+
+</pre><p>或写成</p>
+<pre>Position.pin({ element: a, x: -10, y: -10 });
+
+
+</pre></li>
+</ol>
+<h3 id="center-position-center-pinelement-baseelement">center <code>Position.center(pinElement, [baseElement])</code><a href="#center-position-center-pinelement-baseelement" class="anchor">¶</a></h3><p>居中定位，接收两个参数，将 pinElement 定位在 baseElement 元素的中央位置。</p>
+<ol>
+<li><p><code>pinElement</code>：定位节点，必选。</p>
+</li>
+<li><p><code>baseElement</code>：基准定位节点，可选。缺省时表示将 pinElement 定位在屏幕中央。</p>
+</li>
+</ol>
+<h3 id="viewport-position-viewport">VIEWPORT <code>Position.VIEWPORT</code><a href="#viewport-position-viewport" class="anchor">¶</a></h3><p>当前可视区域的伪元素，当需要相对于当前可视区域定位时，上述参数的 element 可传入 Position.VIEWPORT。</p>
+<p>比如相对于屏幕中央定位：</p>
+<pre>Position.pin(
+    { element: a, x: &#39;center&#39;, y: &#39;center&#39; }, 
+    { element: Position.VIEWPORT, x: &#39;center&#39;, y: &#39;center&#39; }
+);
+
+</pre><p>或写成</p>
+<pre>Position.center(a, Position.VIEWPORT);
+
+
+</pre><h2 id="最佳实践">最佳实践<a href="#最佳实践" class="anchor">¶</a></h2><ol>
+<li><p>定位元素到可视区域左上角</p>
+<pre>Position.pin(a, { x: 0, y: 0 });    // 后一个参数可理解为偏移量
+</pre></li>
+<li><p>定位元素到基准元素位置向右偏移 20px</p>
+<pre>Position.pin(a, { element: b, x: &#39;20px&#39;, y: 0 });
+</pre></li>
+<li><p>定位元素到基准元素下方 20px 的位置</p>
+<pre>Position.pin(a, { element: b, x: 0, y: &#39;100%+20px&#39; });
+</pre></li>
+<li><p>定位元素到基准元素正中央</p>
+<pre>Position.center(a, b);
+</pre></li>
+<li><p>定位元素到基准元素右方中间位置</p>
+<pre>Position.pin(a, { element: b, x: &#39;right&#39;, y: &#39;center&#39; });
+
+</pre><p>或者</p>
+<pre>Position.pin(a, { element: b, x: &#39;100%&#39;, y: &#39;50%&#39; });
+</pre></li>
+<li><p>定位元素到可视区域中央</p>
+<pre>Position.center(a);
+
+
+</pre></li>
+</ol>
+<h2 id="注意事项">注意事项<a href="#注意事项" class="anchor">¶</a></h2><ul>
+<li>IE8 下，当文档流中定位元素在基准元素的相邻前方时，基准元素有可能会因为未 reflow
+而导致 margin-top 失效，所以要尽量避免定位元素与基准元素相邻并在其之前。</li>
+</ul>
+<h2 id="交流讨论">交流讨论<a href="#交流讨论" class="anchor">¶</a></h2><p>欢迎创建
+<a href="https://github.com/alipay/arale/issues/new">GitHub Issue</a>
+来提交反馈。</p>
+
+  </div>
+</article>
+</div>
+      </div>
+      
+    </div>
+    <div id="footer-wrapper">
+      <footer>
+        <p class="powered"><a href="https://spmjs.org">spmjs</a> •
+<a href="http://seajs.org">Sea.js</a> •
+<a href="https://github.com/spmjs/nico-cmd">nico-cmd</a> •
+<a href="http://lab.lepture.com/nico/">nico</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
